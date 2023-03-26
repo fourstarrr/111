@@ -17,7 +17,7 @@ public class 盾兵 : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = 图片.GetComponent<Animator>();
-        finalPosition = GameObject.Find("Target").transform.position;
+        finalPosition = GameObject.Find("弹板").transform.position;
     }
 
 

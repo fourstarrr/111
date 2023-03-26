@@ -113,6 +113,7 @@ public class 弹板控制 : MonoBehaviour
             hinge.motor = motor;
             angle = Mathf.Abs(hinge.angle);
             yield return null;
+            Debug.Log("上升阶段");
         }
         while (angle >= maxAngle)
         {
@@ -122,7 +123,7 @@ public class 弹板控制 : MonoBehaviour
             motor.targetVelocity = -flipperSpeed;
             hinge.motor = motor;
             angle = Mathf.Abs(hinge.angle);
-           // Debug.Log(angle);
+            Debug.Log(angle + " 回落");
             yield return null;
         }
         while (!isUp && angle > 0)
@@ -132,6 +133,7 @@ public class 弹板控制 : MonoBehaviour
             motor.targetVelocity = -flipperSpeed;
             hinge.motor = motor;
             angle = Mathf.Abs(hinge.angle);
+            Debug.Log("防卡顿");
             yield return null;
         }
 

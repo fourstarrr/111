@@ -36,6 +36,7 @@ namespace Character
             if (enemyCurrentHealth <= 0)
             {
                 图片.GetComponent<Animator>().SetBool("isDeath", true);
+                
             }
         }
         private void OnCollisionEnter(Collision collision)

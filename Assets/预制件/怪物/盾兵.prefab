@@ -36,7 +36,7 @@ Transform:
   - {fileID: 2990521087992253869}
   - {fileID: 8762116989043067176}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2990521087772376088
 CapsuleCollider:
@@ -345,3 +345,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  game1: {fileID: 2990521087772373989}
