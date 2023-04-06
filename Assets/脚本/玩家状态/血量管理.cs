@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class 血量管理 : MonoBehaviour
 {
     public float Hp;
-
+    public GameObject 死亡界面;
+    private bool isLoad = false;
     void Start()
     {
 
@@ -17,9 +18,11 @@ public class 血量管理 : MonoBehaviour
     }
     void HpCheck()
     {
-        if (Hp <= 0)
+        if (Hp <= 0 && !isLoad)
         {
-            SceneManager.LoadScene("失败界面");
+            Time.timeScale = 0;
+            死亡界面.SetActive(true);
+            isLoad = true;
         }
     }
 }

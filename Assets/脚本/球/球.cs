@@ -9,6 +9,8 @@ public class 球 : MonoBehaviour
     public float gravity;
     [Header("攻击伤害")]
     public float damage;
+    [Header("击退力度")]
+    public float addforce;
     private Rigidbody rb;
     private float realGravity;
     void Start()
@@ -31,7 +33,17 @@ public class 球 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            ContactPoint[] contactPoints = collision.contacts;
+            foreach (ContactPoint contactPoint in contactPoints)
+            {
+                Vector3 normal = contactPoint.normal;
+                Vector3 force = -normal * addforce;
+                collision.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+                Debug.Log(1);
+            }
             collision.gameObject.GetComponent<挂在怪物身上的属性>().enemyCurrentHealth -= damage;
+           
+
         }
     }
 }

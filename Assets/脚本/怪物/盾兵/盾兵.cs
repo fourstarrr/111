@@ -26,7 +26,10 @@ public class 盾兵 : MonoBehaviour
         if (Mathf.Abs(transform.position.x - finalPosition.x + transform.position.z - finalPosition.z) < scope)
         {
             agent.destination = transform.position;
-            animator.SetBool("isAttack", true);
+            if (图片.GetComponent<攻击>().timeCheck >= 图片.GetComponent<攻击>().attackGap)
+            {
+                animator.SetBool("isAttack", true);
+            }
         }
         else
         {

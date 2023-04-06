@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Ball
+  - Flipper
   layers:
   - Default
   - TransparentFX
@@ -13,9 +16,9 @@ TagManager:
   - UI
   - Enemy
   - 
-  - 
-  - 
-  - 
+  - Environment
+  - BackGrond
+  - Ground
   - 
   - 
   - 
@@ -40,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enviroment
+    uniqueID: 3524475669
+    locked: 0
+  - name: BackGrond
+    uniqueID: 2552067107
     locked: 0
