@@ -20,6 +20,7 @@ namespace Character
         [SerializeField] private float maxHealth;
         public float MaxHealth => maxHealth;
         //属性
+        [Tooltip("1是喜，2是哀，3是怒")]
         [SerializeField] private int properties;
         public int Properties => properties;
 

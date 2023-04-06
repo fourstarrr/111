@@ -15,6 +15,7 @@ namespace Character
         [SerializeField] public float enemyCurrentHealth;
         [SerializeField] public float enemyCurrentDamage;
         [SerializeField] public float enemyCurrentProperties;
+        public bool isSlow = false;
 
         public GameObject 图片;
 
