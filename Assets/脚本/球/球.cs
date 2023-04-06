@@ -13,6 +13,7 @@ public class 球 : MonoBehaviour
     public float addforce;
     private Rigidbody rb;
     private float realGravity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,7 +43,13 @@ public class 球 : MonoBehaviour
                 Debug.Log(1);
             }
             collision.gameObject.GetComponent<挂在怪物身上的属性>().enemyCurrentHealth -= damage;
-           
+
+            //击退效果
+            if (rb != null)
+            {
+                rb.AddExplosionForce(addforce, transform.position, 3, 2);
+                Debug.Log("explosion");
+            }
 
         }
     }
