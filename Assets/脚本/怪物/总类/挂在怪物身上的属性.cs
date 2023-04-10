@@ -10,6 +10,7 @@ namespace Character
     /// </summary>
     public class 挂在怪物身上的属性 : MonoBehaviour
     {
+        public float addForce;
         [Header("此处放入对应的怪物的数据")]
         public 怪物属性基类 CharactersInfo;
         [SerializeField] public float enemyCurrentHealth;
@@ -42,10 +43,17 @@ namespace Character
         }
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == "Flipper")
-            {//碰到挡板之后死亡并且摧毁单位
-                GameObject.Find("玩家数据").GetComponent<血量管理>().Hp -= enemyCurrentDamage;
-                Destroy(gameObject);
+            ContactPoint[] contactPoints = collision.contacts;
+            
+            if (collision.gameObject.CompareTag("Ball"))
+            {
+GameObject.Find("Main Camera").GetComponent<屏幕震动>().isShakeCamera = true;
+                foreach (ContactPoint contactPoint in contactPoints)
+                {
+                    Vector3 normal = contactPoint.normal;
+                    Vector3 force = -normal * addForce;
+                    collision.gameObject.GetComponent<Rigidbody>().velocity = force;
+                }
             }
         }
     }

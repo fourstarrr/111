@@ -27,7 +27,7 @@ public class 弹板控制 : MonoBehaviour
     private float angle;
     void Start()
     {
-        Time.timeScale = 0.8f;
+        Time.timeScale = 1f;
         hinge = GetComponent<HingeJoint>();
         rb = GetComponent<Rigidbody>();
         motor = hinge.motor;
@@ -149,7 +149,7 @@ public class 弹板控制 : MonoBehaviour
             {
                 Vector3 normal = contactPoint.normal;
                 Vector3 force = -normal * addforce;
-                collision.gameObject.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);
+                collision.gameObject.GetComponent<Rigidbody>().velocity = force;
             }
         }
     }
