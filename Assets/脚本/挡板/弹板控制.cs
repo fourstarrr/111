@@ -25,6 +25,8 @@ public class 弹板控制 : MonoBehaviour
     public bool isUp = false;//是否上翻
     private JointMotor motor;
     private float angle;
+    public bool isIn = false;
+    private float downTime;
     void Start()
     {
         Time.timeScale = 1f;
@@ -37,6 +39,11 @@ public class 弹板控制 : MonoBehaviour
     {
         ReductionCheck();
         CheckInput();
+        downTime += Time.deltaTime;
+        if(downTime>0.1f)
+        {
+            isUp = false;
+        }
     }
     void CheckInput()
     {
@@ -44,16 +51,21 @@ public class 弹板控制 : MonoBehaviour
         {
 
             isFlipping = true;
-            isUp = true;
+            Invoke("isUpTrue",0.05f);
             StartCoroutine(Flip1());
         }
         if (Input.GetKeyDown(KeyCode.D) && !isFlipping && flipperType == 2)
         {
 
             isFlipping = true;
-            isUp = true;
+            Invoke("isUpTrue", 0.05f);
             StartCoroutine(Flip2());
         }
+    }
+    public void isUpTrue()
+    {
+        isUp = true;
+        downTime = 0;
     }
     void ReductionCheck()
     {
@@ -141,8 +153,13 @@ public class 弹板控制 : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
+        isIn = true;
         ContactPoint[] contactPoints = collision.contacts;
-        if (collision.gameObject.CompareTag("Ball") && isUp)
+        if(collision.gameObject.CompareTag("Ball")&&GameObject.Find("右撞针").GetComponent<弹板控制>().isIn&& GameObject.Find("右撞针").GetComponent<弹板控制>().isIn&& GameObject.Find("右撞针").GetComponent<弹板控制>().isUp&& GameObject.Find("左撞针").GetComponent<弹板控制>().isUp)
+        {
+            collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, addforce);
+        }
+      else if (collision.gameObject.CompareTag("Ball") && isUp)
         {
 
             foreach (ContactPoint contactPoint in contactPoints)
@@ -152,5 +169,9 @@ public class 弹板控制 : MonoBehaviour
                 collision.gameObject.GetComponent<Rigidbody>().velocity = force;
             }
         }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isIn = false;
     }
 }

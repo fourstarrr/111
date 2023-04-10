@@ -21258,7 +21258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7903043760530056919, guid: 0476bd9ce904c46448b75d330a452be0, type: 3}
       propertyPath: gravity
-      value: 230
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7903043760530056919, guid: 0476bd9ce904c46448b75d330a452be0, type: 3}
       propertyPath: addforce
@@ -21336,8 +21336,16 @@ PrefabInstance:
       value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 5451632858818042207, guid: 107ff1c4ce6009547bdc4754c4f0d7d0, type: 3}
+      propertyPath: m_Name
+      value: "\u53F3\u649E\u9488"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451632858818042207, guid: 107ff1c4ce6009547bdc4754c4f0d7d0, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352868821376375208, guid: 107ff1c4ce6009547bdc4754c4f0d7d0, type: 3}
+      propertyPath: m_Name
+      value: "\u5DE6\u649E\u9488"
       objectReference: {fileID: 0}
     - target: {fileID: 7352868821376375208, guid: 107ff1c4ce6009547bdc4754c4f0d7d0, type: 3}
       propertyPath: m_Layer
