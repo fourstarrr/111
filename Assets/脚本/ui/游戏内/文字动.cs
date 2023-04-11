@@ -26,7 +26,7 @@ public class 文字动 : MonoBehaviour
             {
                 var orig = verts[charInfo.vertexIndex+j];
                 //动画
-                verts[charInfo.vertexIndex + j] = orig + new Vector3();
+                verts[charInfo.vertexIndex + j] = orig + new Vector3(0,Mathf.Sin(Time.deltaTime*2f+orig.x*0.45f)*3,0);
             }
             
         }

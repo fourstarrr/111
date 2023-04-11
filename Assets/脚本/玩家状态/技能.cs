@@ -12,6 +12,13 @@ public class 技能 : MonoBehaviour
     public float skill1NowGap;
     public float skill2NowGap;
     public float skill3NowGap;
+
+    public GameObject 状态1;
+    public GameObject 状态2;
+    public GameObject 状态3;
+
+    public GameObject 技能2;
+    public GameObject 技能3;
     void Start()
     {
         skill1NowGap = skill1Gap;
@@ -48,9 +55,33 @@ public class 技能 : MonoBehaviour
     }
     private void CD()
     {
-        GameObject.Find("技能1").GetComponent<Image>().fillAmount = skill1NowGap / skill1Gap;
-        GameObject.Find("技能2").GetComponent<Image>().fillAmount = skill2NowGap / skill2Gap;
-        GameObject.Find("技能3").GetComponent<Image>().fillAmount = skill3NowGap / skill3Gap;
+        GameObject.Find("技能111").GetComponent<Image>().fillAmount = 1-skill1NowGap / skill1Gap;
+        GameObject.Find("技能222").GetComponent<Image>().fillAmount =1- skill2NowGap / skill2Gap;
+        GameObject.Find("技能333").GetComponent<Image>().fillAmount =1- skill3NowGap / skill3Gap;
+        switch (GameObject.Find("球").GetComponent<球>().properties)
+        {
+            case 0:
+                状态1.SetActive(false);
+                状态2.SetActive(false);
+                状态3.SetActive(false);
+                break;
+            case 1:
+                状态1.SetActive(true);
+                状态2.SetActive(false);
+                状态3.SetActive(false);
+                break;
+            case 2:
+                状态1.SetActive(false);
+                状态2.SetActive(true);
+                状态3.SetActive(false);
+                break;
+            case 3:
+                状态1.SetActive(false);
+                状态2.SetActive(false);
+                状态3.SetActive(true);
+                break;
+
+        }
     }
     void Skill1()
     {
@@ -62,11 +93,14 @@ public class 技能 : MonoBehaviour
     }
     void Skill2()
     {
-
+        技能2.SetActive(true);
+        技能2.GetComponent<技能2>().time = 0;
     }
     void Skill3()
     {
 
+        技能3.SetActive(true);
+        技能3.GetComponent<技能3>().time = 0;
     }
 
 }
