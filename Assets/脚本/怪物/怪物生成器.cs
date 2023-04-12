@@ -14,7 +14,7 @@ public class 怪物生成器 : MonoBehaviour
    public Wave[] waves;
     public Transform[] spawnPoints;
     private Wave currentWave;
-    public int currentWaveNumber;
+    private int currentWaveNumber;
     private bool canSpawn = true;
     private float nextSpawnTime;
     private void Update()

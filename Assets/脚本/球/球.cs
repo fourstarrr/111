@@ -21,7 +21,6 @@ public class 球 : MonoBehaviour
 
     void Start()
     {
-        
         rb = GetComponent<Rigidbody>();
     }
 
