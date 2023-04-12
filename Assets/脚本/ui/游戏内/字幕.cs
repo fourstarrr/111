@@ -18,7 +18,7 @@ public class 字幕 : MonoBehaviour
        tex = GetComponent<TMP_Text>();
         str = tex.text;
         tex.text = "";
-        i = 70;
+        i = 140;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class 字幕 : MonoBehaviour
                 str1 = str1 + str[index].ToString();
                 tex.text = str1;
                 index += 1;
-                i = 70;
+                i = 300;
             }
         }
     }
