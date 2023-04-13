@@ -9,15 +9,17 @@ public class 技能2 : MonoBehaviour
 {
     public float damage;
     public float time;
-    void Updata()
+    private void Update()
     {
-        time+=Time.deltaTime;
-        if(time>5)
+        time += Time.deltaTime;
+        
+        if (time > 5)
         {
             GameObject.Find("技能2特效").SetActive(false);
             gameObject.SetActive(false);
         }
     }
+   
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Enemy")
