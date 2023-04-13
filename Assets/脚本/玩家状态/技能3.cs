@@ -6,7 +6,7 @@ using UnityEngine;
 public class 技能3 : MonoBehaviour
 {
     public float damage;
-    public float time;
+ 
     void Start()
     {
         
@@ -15,11 +15,7 @@ public class 技能3 : MonoBehaviour
   
     void Update()
     {
-        time += Time.deltaTime;
-        if(time>0.2)
-        {
-            gameObject.SetActive(false);
-        }
+       
     }
     private void OnTriggerStay(Collider other)
     {

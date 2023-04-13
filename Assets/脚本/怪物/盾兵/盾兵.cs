@@ -13,6 +13,8 @@ public class 盾兵 : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private Vector3 finalPosition;
+
+    public GameObject 受击特效;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,6 +25,7 @@ public class 盾兵 : MonoBehaviour
 
     void Update()
     {
+        
         if (Mathf.Abs(transform.position.x - finalPosition.x + transform.position.z - finalPosition.z) < scope)
         {
             agent.destination = transform.position;
@@ -35,6 +38,10 @@ public class 盾兵 : MonoBehaviour
         {
             FindFlipper();
         }
+    }
+    public void BeHurt()
+    {
+        受击特效.SetActive(true);
     }
     void FindFlipper()
     {

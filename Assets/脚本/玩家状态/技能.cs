@@ -19,6 +19,7 @@ public class 技能 : MonoBehaviour
 
     public GameObject 技能2;
     public GameObject 技能3;
+    public GameObject 技能3立绘;
     void Start()
     {
         skill1NowGap = skill1Gap;
@@ -98,9 +99,9 @@ public class 技能 : MonoBehaviour
     }
     void Skill3()
     {
-
+        技能3立绘.SetActive(true);
         技能3.SetActive(true);
-        技能3.GetComponent<技能3>().time = 0;
+        
     }
 
 }

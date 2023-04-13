@@ -39,6 +39,7 @@ public class 球 : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<盾兵>().BeHurt();
             ContactPoint[] contactPoints = collision.contacts;
             foreach (ContactPoint contactPoint in contactPoints)
             {

@@ -51,14 +51,14 @@ public class 弹板控制 : MonoBehaviour
         {
 
             isFlipping = true;
-            Invoke("isUpTrue",0.05f);
+            Invoke("isUpTrue",0.03f);
             StartCoroutine(Flip1());
         }
         if (Input.GetKeyDown(KeyCode.D) && !isFlipping && flipperType == 2)
         {
 
             isFlipping = true;
-            Invoke("isUpTrue", 0.05f);
+            Invoke("isUpTrue", 0.03f);
             StartCoroutine(Flip2());
         }
     }
