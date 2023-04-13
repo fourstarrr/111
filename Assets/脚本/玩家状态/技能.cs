@@ -18,6 +18,7 @@ public class 技能 : MonoBehaviour
     public GameObject 状态3;
 
     public GameObject 技能2;
+    public GameObject 技能2特效;
     public GameObject 技能3;
     public GameObject 技能3立绘;
     void Start()
@@ -95,6 +96,7 @@ public class 技能 : MonoBehaviour
     void Skill2()
     {
         技能2.SetActive(true);
+        技能2特效.SetActive(true);
         技能2.GetComponent<技能2>().time = 0;
     }
     void Skill3()

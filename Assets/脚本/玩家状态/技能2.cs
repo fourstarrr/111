@@ -14,6 +14,7 @@ public class 技能2 : MonoBehaviour
         time+=Time.deltaTime;
         if(time>5)
         {
+            GameObject.Find("技能2特效").SetActive(false);
             gameObject.SetActive(false);
         }
     }
