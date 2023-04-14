@@ -20,7 +20,7 @@ public class 主界面 : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("第一章前对话");
+        SceneManager.LoadScene("选关界面");
     }
     public void Setting()
     {

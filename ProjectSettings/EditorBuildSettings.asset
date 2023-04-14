@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: "Assets/\u6B63\u5F0F\u6E38\u620F\u573A\u666F/\u6E38\u620F\u4E3B\u754C\u9762.unity"
     guid: 16c25612fdc40204da213e2336b01f4e
   - enabled: 1
+    path: "Assets/\u6B63\u5F0F\u6E38\u620F\u573A\u666F/\u9009\u5173\u754C\u9762.unity"
+    guid: aac9a94acb621f54c8be7131cc90cd53
+  - enabled: 1
     path: "Assets/\u6B63\u5F0F\u6E38\u620F\u573A\u666F/\u7B2C\u4E00\u7AE0\u524D\u5BF9\u8BDD.unity"
     guid: 620ff1e1b9b33b144abd6ab65704baf8
-  - enabled: 0
-    path: "Assets/\u6B63\u5F0F\u6E38\u620F\u573A\u666F/\u5931\u8D25\u754C\u9762.unity"
-    guid: 7a01dbde4cd58864eab239f5694d9a9b
   - enabled: 1
     path: "Assets/Scenes/\u5173\u5361/\u7B2C\u4E00\u7AE0\u6218\u6597.unity"
     guid: 391a8fea188ff4249832e0a8b8a2375b
