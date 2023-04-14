@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class 对话框 : MonoBehaviour
 {
+    public int sceneNumber;
     public GameObject[] texts;
     public int number;
     public GameObject vedio2;
@@ -13,13 +14,20 @@ public class 对话框 : MonoBehaviour
     }   
     void Update()
     {
-        if(number!=0&& number != texts.Length-1)
+        if(number!=0&& number != texts.Length-1&&sceneNumber ==1)
         {
             texts[number-1].SetActive(false);
             texts[number].SetActive(true);
         }
-        else if(number==texts.Length)
-        {          
+        else if(number != 0 && number != texts.Length && sceneNumber == 2)
+        {
+            texts[number - 1].SetActive(false);
+            texts[number].SetActive(true);
+        }
+        else if (number != 0 && number != texts.Length && sceneNumber == 3)
+        {
+            texts[number - 1].SetActive(false);
+            texts[number].SetActive(true);
         }
     }
     public void addNumber()
@@ -29,10 +37,18 @@ public class 对话框 : MonoBehaviour
             number++;
 
         }
-        else if (number == texts.Length-1)
+        else if (number == texts.Length-1&&sceneNumber ==1)
         {
             texts[number-1].SetActive(false);
             vedio2.SetActive(true);
-        }    
+        }
+        else if (number == texts.Length - 1 && sceneNumber == 2)
+        {
+            SceneManager.LoadScene("选关界面");
+        }
+        else if (number == texts.Length - 1 && sceneNumber == 3)
+        {
+            SceneManager.LoadScene("第二章战斗");
+        }
     }
 }

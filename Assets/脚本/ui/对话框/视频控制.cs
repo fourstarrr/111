@@ -33,7 +33,7 @@ public class 视频控制 : MonoBehaviour
         {
             if (time1 >= timeEnd)
             {
-                SceneManager.LoadScene("第一章战斗");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             }
         }
     }

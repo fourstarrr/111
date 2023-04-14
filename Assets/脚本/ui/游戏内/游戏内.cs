@@ -17,10 +17,12 @@ public class 游戏内 : MonoBehaviour
     }
     public void ReTry()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ReturnMain()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 }

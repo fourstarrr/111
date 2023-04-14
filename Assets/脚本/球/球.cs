@@ -114,10 +114,10 @@ public class 球 : MonoBehaviour
                             }
                             break;
                         case 3:
-                            collision.gameObject.GetComponent<挂在怪物身上的属性>().enemyCurrentHealth -= damage * 1.5f;
+                            collision.gameObject.GetComponent<挂在怪物身上的属性>().enemyCurrentHealth -= damage ;
                             if (rb != null)
                             {
-                                rb.AddExplosionForce(addforce, transform.position, 3, 2);
+                                rb.AddExplosionForce(addforce*1.5f, transform.position, 3, 2);
                                 //Debug.Log("explosion");
                             }
                             break;

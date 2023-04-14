@@ -11,6 +11,8 @@ public class 主界面 : MonoBehaviour
     public GameObject 角色档案;
     public GameObject 集团人物关系;
     public GameObject 医师;
+    public GameObject 喜;
+    public GameObject 陆羽凡;
     private bool isRight = false;
     private int i = 0;
 
@@ -56,7 +58,10 @@ public class 主界面 : MonoBehaviour
     public void  Back4()
     {
         医师.SetActive(false);
+        陆羽凡.SetActive(false);
+        喜.SetActive(false);
     }
+   
     public void Enter()
     {
         集团人物关系.SetActive(true);
@@ -64,6 +69,14 @@ public class 主界面 : MonoBehaviour
     public void CharacterChoose1()
     {
         医师.SetActive(true);
+    }
+    public void CharacterChoose2()
+    {
+        喜.SetActive(true);
+    }
+    public void CharacterChoose3()
+    {
+        陆羽凡.SetActive(true);
     }
     public void Illustrations()
     {

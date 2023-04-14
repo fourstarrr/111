@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 [System.Serializable]
 public class Wave
 {
@@ -17,8 +18,14 @@ public class 怪物生成器 : MonoBehaviour
     public int currentWaveNumber;
     private bool canSpawn = true;
     private float nextSpawnTime;
+    private float enterNextSceneTime;
+    private void Start()
+    {
+        enterNextSceneTime = 0;
+    }
     private void Update()
     {
+        
         currentWave =  waves[currentWaveNumber];
         SpawnWave();
         GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -28,6 +35,17 @@ public class 怪物生成器 : MonoBehaviour
             canSpawn = true;
 
         }
+        if (currentWaveNumber + 1 == waves.Length && totalEnemies.Length == 0)
+        {
+
+            enterNextSceneTime += Time.deltaTime;
+            Debug.Log(enterNextSceneTime);
+            if (enterNextSceneTime > 5)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
     }
     void SpawnWave()
     {

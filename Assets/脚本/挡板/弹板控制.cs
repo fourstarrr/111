@@ -29,7 +29,7 @@ public class 弹板控制 : MonoBehaviour
     private float downTime;
     void Start()
     {
-        Time.timeScale = 1f;
+       // Time.timeScale = 1f;
         hinge = GetComponent<HingeJoint>();
         rb = GetComponent<Rigidbody>();
         motor = hinge.motor;
