@@ -87,6 +87,7 @@ public class 技能 : MonoBehaviour
     }
     void Skill1()
     {
+        PlayAudio1();
         if (GameObject.Find("球").GetComponent<球>().properties <= 3)
         { GameObject.Find("球").GetComponent<球>().properties++; }
         else
@@ -101,9 +102,23 @@ public class 技能 : MonoBehaviour
     }
     void Skill3()
     {
+        PlayAudio4();
         技能3立绘.SetActive(true);
         技能3.SetActive(true);
         
+    }
+    void PlayAudio1()
+    {
+        GameObject.Find("切换音效").GetComponent<AudioSource>().Play();
+    }
+   
+    void PlayAudio3()
+    {
+        GameObject.Find("选择音效").GetComponent<AudioSource>().Play();
+    }
+    void PlayAudio4()
+    {
+        GameObject.Find("技能3音效").GetComponent<AudioSource>().Play();
     }
 
 }

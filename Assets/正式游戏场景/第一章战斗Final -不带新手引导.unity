@@ -22331,6 +22331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u7403"
       objectReference: {fileID: 0}
+    - target: {fileID: 7620554078280963951, guid: 0476bd9ce904c46448b75d330a452be0, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7649356343121967746, guid: 0476bd9ce904c46448b75d330a452be0, type: 3}
       propertyPath: m_RootOrder
       value: 8

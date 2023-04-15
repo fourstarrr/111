@@ -32,7 +32,8 @@ public class 对话框 : MonoBehaviour
     }
     public void addNumber()
     {
-        if( number != texts.Length-1)
+        PlayAudio();
+        if ( number != texts.Length-1)
         {
             number++;
 
@@ -40,6 +41,7 @@ public class 对话框 : MonoBehaviour
         else if (number == texts.Length-1&&sceneNumber ==1)
         {
             texts[number-1].SetActive(false);
+            GameObject.Find("音频控制").SetActive(false);
             vedio2.SetActive(true);
         }
         else if (number == texts.Length - 1 && sceneNumber == 2)
@@ -50,5 +52,9 @@ public class 对话框 : MonoBehaviour
         {
             SceneManager.LoadScene("第二章战斗");
         }
+    }
+    void PlayAudio()
+    {
+        GameObject.Find("选择音效").GetComponent<AudioSource>().Play();
     }
 }

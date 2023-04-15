@@ -23,12 +23,13 @@ public class 主界面 : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("选关界面");
+        PlayAudio();
     }
     public void Setting()
     {
         BackGroundSmall();
-
-       游戏标题.SetActive(false);
+        PlayAudio();
+        游戏标题.SetActive(false);
         游戏按钮.SetActive(false);
     }
     public void Designer()
@@ -39,13 +40,16 @@ public class 主界面 : MonoBehaviour
         }
     }
     public void Back()
-    {if (!isRight)
+    {
+        PlayAudio2();
+        if (!isRight)
             BackGroundBig();
         else if (isRight)
             BackRight();
     }
     public void Back2()
     {
+        PlayAudio2();
         游戏标题.SetActive(true);
         游戏按钮.SetActive(true);
         角色档案.SetActive(false);
@@ -53,10 +57,12 @@ public class 主界面 : MonoBehaviour
     }
     public void Back3()
     {
+        PlayAudio2();
         集团人物关系.SetActive(false);
     }
     public void  Back4()
     {
+        PlayAudio2();
         医师.SetActive(false);
         陆羽凡.SetActive(false);
         喜.SetActive(false);
@@ -80,6 +86,7 @@ public class 主界面 : MonoBehaviour
     }
     public void Illustrations()
     {
+        PlayAudio();
         游戏标题.SetActive(false);
         游戏按钮.SetActive(false);
         角色档案.SetActive(true);
@@ -156,5 +163,17 @@ public class 主界面 : MonoBehaviour
             i = 0;
         }
 
+    }
+    void PlayAudio()
+    {
+        GameObject.Find("选择音效").GetComponent<AudioSource>().Play();
+    }
+    void PlayAudio2()
+    {
+        GameObject.Find("选择音效2").GetComponent<AudioSource>().Play();
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

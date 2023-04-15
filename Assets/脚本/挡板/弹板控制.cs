@@ -49,14 +49,14 @@ public class 弹板控制 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) && !isFlipping && flipperType == 1)
         {
-
+            GameObject.Find("弹板音效").GetComponent<AudioSource>().Play();
             isFlipping = true;
             Invoke("isUpTrue",0.03f);
             StartCoroutine(Flip1());
         }
         if (Input.GetKeyDown(KeyCode.D) && !isFlipping && flipperType == 2)
         {
-
+            GameObject.Find("弹板音效").GetComponent<AudioSource>().Play();
             isFlipping = true;
             Invoke("isUpTrue", 0.03f);
             StartCoroutine(Flip2());
