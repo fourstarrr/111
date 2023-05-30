@@ -51,3 +51,6 @@ TagManager:
   - name: BackGrond
     uniqueID: 2552067107
     locked: 0
+  - name: Enemy
+    uniqueID: 566547831
+    locked: 0

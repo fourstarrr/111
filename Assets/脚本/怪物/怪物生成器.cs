@@ -19,6 +19,7 @@ public class 怪物生成器 : MonoBehaviour
     private bool canSpawn = true;
     private float nextSpawnTime;
     private float enterNextSceneTime;
+    public bool isBoss;
     private void Start()
     {
         enterNextSceneTime = 0;
@@ -40,7 +41,7 @@ public class 怪物生成器 : MonoBehaviour
 
             enterNextSceneTime += Time.deltaTime;
             Debug.Log(enterNextSceneTime);
-            if (enterNextSceneTime > 5)
+            if (enterNextSceneTime > 5&&!isBoss)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }

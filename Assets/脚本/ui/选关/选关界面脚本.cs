@@ -7,7 +7,7 @@ public class 选关界面脚本 : MonoBehaviour
 {
     public GameObject wenan1;
     public GameObject wenan2;
-
+    public GameObject 还没做好;
     public void Button1()
     {
         PlayAudio();
@@ -31,6 +31,14 @@ public class 选关界面脚本 : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene("游戏主界面");
+    }
+    public void Enter3()
+    {
+        SceneManager.LoadScene("第三章战斗");
+    }
+    public void Enter4()
+    {
+      还没做好.SetActive(true);
     }
     void PlayAudio()
     {
