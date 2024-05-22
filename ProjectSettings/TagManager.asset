@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - Flipper
   - Skywall
+  - Role
   layers:
   - Default
   - TransparentFX
